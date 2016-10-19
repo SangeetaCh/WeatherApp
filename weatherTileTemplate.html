@@ -1,0 +1,31 @@
+ <div class="row tile" ng-repeat="weather in weatherData.list">
+            
+ <div class="col-xs-12">
+                <div weather-panel="forecast" show-entry="forecast.list[0]" class="ng-isolate-scope ng-scope">
+				<div class="weather panel panel-primary">
+    <div class="panel-body">
+        <div>
+            <p class="lead ng-binding">
+			{{weather.dt*1000 | date:'dd-MM-yyyy'}}
+                <img ng-src="http://localhost/WeatherApp/img/{{weather.weather[0].icon}}.png">&nbsp;&nbsp;
+               {{weather.weather[0].description}}
+            </p>
+            <p class="ng-binding">
+                
+                High: {{weather.temp.max}}&nbsp;&nbsp;
+                Low: {{weather.temp.min}}
+            </p>
+        </div>
+    </div>
+    <div class="panel-footer">
+        <small class="ng-binding">
+            Day: {{weather.temp.day}}&nbsp;~&nbsp;
+            Night: {{weather.temp.night}}&nbsp;~&nbsp;
+            Pressure: {{weather.pressure}}&nbsp;~&nbsp;
+            Humidity: {{weather.humidity}}
+        </small>
+    </div>
+</div>
+</div>
+            </div>
+        </div>

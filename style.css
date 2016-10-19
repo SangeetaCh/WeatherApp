@@ -1,0 +1,11 @@
+/* Styles go here */
+.tile
+{
+	border :1px solid lightgray;
+	padding:5px;
+	border-radius:3px;
+	box-shadow:0 0 4px lightgray;
+	margin-bottom:5px;
+	margin-right:10px;
+	display:inline-block;
+}

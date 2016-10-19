@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+
+
+
+<html lang="en" >
+<head>
+        <script data-require="angularjs@1.5.8" data-semver="1.5.8" src="https://opensource.keycdn.com/angularjs/1.5.8/angular.min.js"></script>
+		 <link rel="stylesheet" href="style.css" />
+        <title>OpenWeather App</title>
+       <script src="Services.js"></script>
+	    
+    </head>
+    <body ng-app="WeatherApp">
+        
+        <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+            <div class="navbar-header">
+                
+                <a class="navbar-brand" href="#">OpenWeather App </a>
+            </div>
+            
+        </nav>
+        <div class="container" ng-controller="WeatherController">
+	
+            <!-- ngView:  --><div ng-view="" class="ng-scope">
+	<div class="container ng-scope">
+    <div class="weather-search">
+        <div class="row">
+            <div class="col-xs-12">
+                <div>
+                    <form class="form-inline ng-pristine ng-valid" role="form">
+                        <span class="btn-group">
+                           
+                        </span>
+                        <span class="form-group">
+                            <label class="sr-only" for="location">City Name</label>
+                            <input ng-model="city" type="text" class="form-control ng-pristine ng-valid" id="location" placeholder="City Name">
+							<label class="sr-only" for="location">Select Days</label><select ng-model="days">
+							
+							<option value="1">1</option> 
+							<option value="2">2</option> 
+							<option value="3">3</option> 
+							<option value="4">4</option> 
+							</select>
+							
+							 
+                        </span>
+                        <button ng-click="getForecastByZipcode(city,days)" type="submit" class="btn btn-primary">Search</button>
+                        <span ng-show="message" class="alert ng-binding ng-hide"><span class="glyphicon glyphicon-arrow-left">&nbsp;</span></span>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="weather-data">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="">
+                    <h3 class="ng-binding">
+                        {{weatherData.city.name}}
+						</br>
+                        <small class="ng-binding">Lon:{{weatherData.city.coord.lon}}  Lat: {{weatherData.city.coord.lat}} </small>
+                    </h3>
+                </div>
+            </div>
+        </div>
+        <my-directive data=weatherData></my-directive>
+        
+	<!-- <div ng-repeat="weather in weatherData.list"> 
+	<div weather-tile weather="weather">
+	</div> 
+	</div>	 -->
+            
+</div>
+            </div>
+            
+                
+    
+        
+    </div>
+</div>
+</div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+        </div>
+        
+       
+    
+
+</body></html>
